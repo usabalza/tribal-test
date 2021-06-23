@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoritesView" customModule="TribalTest">
+            <connections>
+                <outlet property="collectionView" destination="8hx-nf-wLm" id="YKC-E7-1yC"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Jd0-K0-Tie"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8hx-nf-wLm">
+                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qO5-dn-jIz">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="dTd-dO-79s">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8hx-nf-wLm" secondAttribute="trailing" id="ECH-HH-6up"/>
+                <constraint firstAttribute="trailing" secondItem="dTd-dO-79s" secondAttribute="trailing" id="LhC-2y-JcO"/>
+                <constraint firstItem="8hx-nf-wLm" firstAttribute="top" secondItem="dTd-dO-79s" secondAttribute="bottom" constant="20" id="QcE-Pm-Cj0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="8hx-nf-wLm" secondAttribute="bottom" id="Xxk-Ej-dcw"/>
+                <constraint firstItem="8hx-nf-wLm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="e32-vg-R8C"/>
+                <constraint firstItem="dTd-dO-79s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eH7-tj-uvo"/>
+                <constraint firstItem="dTd-dO-79s" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="m3i-Ux-dJq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138" y="142"/>
+        </view>
+    </objects>
+</document>

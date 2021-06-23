@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ImageModel" representedClassName="ImageModel" syncable="YES" codeGenerationType="class">
+        <attribute name="altDescription" optional="YES" attributeType="String"/>
+        <attribute name="blurHash" optional="YES" attributeType="String"/>
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="height" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="likedByUser" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="likes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="links" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="WelcomeLinks"/>
+        <attribute name="promotedAt" optional="YES" attributeType="String"/>
+        <attribute name="sponsorship" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="Sponsorship"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+        <attribute name="urls" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="Urls"/>
+        <attribute name="user" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="User"/>
+        <attribute name="welcomeDescription" optional="YES" attributeType="String"/>
+        <attribute name="width" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="imageLinks" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="WelcomeLinksModel" inverseName="linksImage" inverseEntity="WelcomeLinksModel"/>
+        <relationship name="imageSponsorship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SponsorshipModel" inverseName="sponsorshipImage" inverseEntity="SponsorshipModel"/>
+        <relationship name="imageUrls" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="URLModel" inverseName="urlImage" inverseEntity="URLModel"/>
+        <relationship name="imageUser" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="UserModel" inverseName="userImage" inverseEntity="UserModel"/>
+    </entity>
+    <entity name="SponsorshipModel" representedClassName="SponsorshipModel" syncable="YES" codeGenerationType="class">
+        <attribute name="impressionUrls" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="[String]"/>
+        <attribute name="sponsor" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="User"/>
+        <attribute name="tagline" optional="YES" attributeType="String"/>
+        <attribute name="taglineUrl" optional="YES" attributeType="String"/>
+        <relationship name="sponsorshipImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageModel" inverseName="imageSponsorship" inverseEntity="ImageModel"/>
+    </entity>
+    <entity name="URLModel" representedClassName="URLModel" syncable="YES" codeGenerationType="class">
+        <attribute name="full" optional="YES" attributeType="String"/>
+        <attribute name="raw" optional="YES" attributeType="String"/>
+        <attribute name="regular" optional="YES" attributeType="String"/>
+        <attribute name="small" optional="YES" attributeType="String"/>
+        <attribute name="thumb" optional="YES" attributeType="String"/>
+        <relationship name="urlImage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageModel" inverseName="imageUrls" inverseEntity="ImageModel"/>
+    </entity>
+    <entity name="UserModel" representedClassName="UserModel" syncable="YES" codeGenerationType="class">
+        <attribute name="acceptedTos" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="forHire" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="instagramUsername" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="links" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="UserLinks"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="portfolioURL" optional="YES" attributeType="String"/>
+        <attribute name="profileImage" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="ProfileImage"/>
+        <attribute name="totalCollections" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalLikes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalPhotos" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="twitterUserName" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="userImage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageModel" inverseName="imageUser" inverseEntity="ImageModel"/>
+    </entity>
+    <entity name="WelcomeLinksModel" representedClassName="WelcomeLinksModel" syncable="YES" codeGenerationType="class">
+        <attribute name="download" optional="YES" attributeType="String"/>
+        <attribute name="downloadLocation" optional="YES" attributeType="String"/>
+        <attribute name="html" optional="YES" attributeType="String"/>
+        <attribute name="linksSelf" optional="YES" attributeType="String"/>
+        <relationship name="linksImage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ImageModel" inverseName="imageLinks" inverseEntity="ImageModel"/>
+    </entity>
+    <elements>
+        <element name="ImageModel" positionX="-54" positionY="0" width="128" height="343"/>
+        <element name="SponsorshipModel" positionX="259.76171875" positionY="56.4765625" width="128" height="118"/>
+        <element name="URLModel" positionX="91.48828125" positionY="45.984375" width="128" height="133"/>
+        <element name="UserModel" positionX="351.484375" positionY="213.65234375" width="128" height="328"/>
+        <element name="WelcomeLinksModel" positionX="148.90234375" positionY="296.31640625" width="128" height="118"/>
+    </elements>
+</model>
